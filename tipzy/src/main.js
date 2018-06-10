@@ -15,11 +15,11 @@ import DismissKeyboard from 'dismissKeyboard';
 
 class Main extends Component {
   state = {
-    amount: '',
-    people: '',
+    amount: 0,
+    people: 0,
     roundup: '',
-    tip: '',
-    total: ''
+    tip: 0,
+    total: 0
   };
 
   renderTotalAndTip(tip, total) {
@@ -37,87 +37,59 @@ class Main extends Component {
 
   addAmount() {
     let amount = this.state.amount;
-    this.setState({ amount: amount });
+    this.setState({ amount });
   }
 
   setTipAndTotal20() {
     let people = this.state.people;
-    console.log('people is this in set tip 20: ', people);
     let amount = this.state.amount;
-    console.log('amount is this in set tip 20: ', amount);
-
     let subtotal = amount / people;
-    console.log('subtotal is this in set tip 20: ', subtotal);
 
     // let roundup = this.state.roundup
     let roundup = (Math.ceil(subtotal * 100) / 100).toFixed(2);
-    console.log('roundup is this in set tip 20: ', roundup);
 
     let tip = this.state.tip;
     tip = roundup * 0.2 * 100 / 100;
-    console.log('tip is this in set tip 20: ', tip);
 
     // let total = (roundup+tip)
-    let total = (roundup && tip ? tip + subtotal : tip).toFixed(2);
-
-    this.setState({ roundup: roundup, total: total, tip: tip });
-    console.log('tip', tip);
-    console.log('roundup: ', roundup);
-    console.log('total: ', total);
+    let total = (roundup && tip ? tip + subtotal : 0).toFixed(2);
+    this.setState({ roundup, total, tip });
     DismissKeyboard();
   }
 
   setTipAndTotal25() {
     let people = this.state.people;
-    console.log('people is this in set tip 25: ', people);
     let amount = this.state.amount;
-    console.log('amount is this in set tip 25: ', amount);
 
     let subtotal = amount / people;
-    console.log('subtotal is this in set tip 25: ', subtotal);
 
     // let roundup = this.state.roundup
     let roundup = (Math.ceil(subtotal * 100) / 100).toFixed(2);
-    console.log('roundup is this in set tip 25: ', roundup);
 
     let tip = this.state.tip;
     tip = roundup * 0.25 * 100 / 100;
-    console.log('tip is this in set tip 25: ', tip);
 
     // let total = (roundup+tip)
-    let total = (roundup && tip ? tip + subtotal : tip).toFixed(2);
+    let total = (roundup && tip ? tip + subtotal : 0).toFixed(2);
 
-    this.setState({ roundup: roundup, total: total, tip: tip });
-    console.log('tip', tip);
-    console.log('roundup: ', roundup);
-    console.log('total: ', total);
+    this.setState({ roundup, total, tip });
     DismissKeyboard();
   }
 
   setTipAndTotal30() {
     let people = this.state.people;
-    console.log('people is this in set tip 30: ', people);
     let amount = this.state.amount;
-    console.log('amount is this in set tip 30: ', amount);
-
     let subtotal = amount / people;
-    console.log('subtotal is this in set tip 30: ', subtotal);
 
-    // let roundup = this.state.roundup
     let roundup = (Math.ceil(subtotal * 100) / 100).toFixed(2);
-    console.log('roundup is this in set tip 30: ', roundup);
 
     let tip = this.state.tip;
     tip = roundup * 0.3 * 100 / 100;
-    console.log('tip is this in set tip 30: ', tip);
 
     // let total = (roundup+tip)
-    let total = (roundup && tip ? tip + subtotal : tip).toFixed(2);
+    let total = (roundup && tip ? tip + subtotal : 0).toFixed(2);
 
-    this.setState({ roundup: roundup, total: total, tip: tip });
-    console.log('tip', tip);
-    console.log('roundup: ', roundup);
-    console.log('total: ', total);
+    this.setState({ roundup, total, tip });
     DismissKeyboard();
   }
 
