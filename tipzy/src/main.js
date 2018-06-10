@@ -45,13 +45,11 @@ class Main extends Component {
     let amount = this.state.amount;
     let subtotal = amount / people;
 
-    // let roundup = this.state.roundup
     let roundup = (Math.ceil(subtotal * 100) / 100).toFixed(2);
 
     let tip = this.state.tip;
     tip = roundup * 0.2 * 100 / 100;
 
-    // let total = (roundup+tip)
     let total = (roundup && tip ? tip + subtotal : 0).toFixed(2);
     this.setState({ roundup, total, tip });
     DismissKeyboard();
@@ -63,13 +61,11 @@ class Main extends Component {
 
     let subtotal = amount / people;
 
-    // let roundup = this.state.roundup
     let roundup = (Math.ceil(subtotal * 100) / 100).toFixed(2);
 
     let tip = this.state.tip;
     tip = roundup * 0.25 * 100 / 100;
 
-    // let total = (roundup+tip)
     let total = (roundup && tip ? tip + subtotal : 0).toFixed(2);
 
     this.setState({ roundup, total, tip });
@@ -86,7 +82,6 @@ class Main extends Component {
     let tip = this.state.tip;
     tip = roundup * 0.3 * 100 / 100;
 
-    // let total = (roundup+tip)
     let total = (roundup && tip ? tip + subtotal : 0).toFixed(2);
 
     this.setState({ roundup, total, tip });
@@ -147,7 +142,6 @@ class Main extends Component {
 
           <TouchableOpacity
             style={Style.buttonContainer}
-            // onPress={() => this.searchEvents(this.state.eventType)}
             onPress={() => this.setTipAndTotal25()}
           >
             <View style={Style.button2}>
@@ -157,7 +151,6 @@ class Main extends Component {
 
           <TouchableOpacity
             style={Style.buttonContainer}
-            // onPress={() => this.searchEvents(this.state.eventType)}
             onPress={() => this.setTipAndTotal30()}
           >
             <View style={Style.button3}>
